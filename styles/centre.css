@@ -9,7 +9,7 @@
 	--card-width: calc(var(--card-height) / 1.5);
 }
 
-/* body {
+body {
 	min-height: 100vh;
 	background: #212534;
 	display: flex;
@@ -18,10 +18,10 @@
 	padding-top: 2rem;
 	padding-bottom: 2rem;
 	box-sizing: border-box;
-} */
+}
 
 .card {
-	background: #7fd8a7;
+	background: #191c29;
 	width: var(--card-width);
 	height: var(--card-height);
 	padding: 3px;
@@ -104,7 +104,3 @@ a {
 	font-weight: bold;
 	margin-top: 2rem;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
