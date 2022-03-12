@@ -88,4 +88,9 @@ const config = {
 	},
 }
 
-export default () => <ParticleField config={config} />
+// export default () => <ParticleField config={config} />
+
+const ParticleFieldEffect = () => {
+	return <ParticleField config={config} />
+}
+export default ParticleFieldEffect
