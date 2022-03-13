@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Centre from '../components/Centre'
+import DropMenu from '../components/DropMenu'
 import ParticleFieldEffect from '../components/ParticleFieldEffect'
 
 export default function Home() {
@@ -15,21 +16,33 @@ export default function Home() {
 			</div>
 
 			<header className='fixed inset-0 flex flex-row justify-between items-start w-screen h-32 p-4 text-violet-600 bg-transparent text-3xl z-20'>
-				<div className='bg-black bg-opacity-50 text-center p-2 rounded-lg hover:bg-opacity-100'>
-					Sara Gray
-					<p className='text-base text-opacity-50'>
-						react - jamstack - development
-					</p>
-				</div>
+				<DropMenu
+					title='sara gray'
+					tagline='react - jamstack - development'
+					listItems={[
+						{ _id: 'm1', text: '1' },
+						{ _id: 'm2', text: '2' },
+						{ _id: 'm3', text: '3' },
+						{ _id: 'm4', text: '4' },
+						{ _id: 'm5', text: '5' },
+					]}
+				/>
 				<ul className='flex flex-row gap-4 lg:gap-24 px-12'>
-					<li className='hover:text-[#58c7fa] p-2 hover:ring-2 ring-sky-400 hover:rounded-lg'>
-						Portfolio
-					</li>
-					<li className='hover:text-[#58c7fa] p-2 hover:ring-2 ring-sky-400 hover:rounded-lg'>
-						Blog
-						<li style={{ listStyle: 'outside' }}>post 1</li>
-						<li>post 2</li>
-					</li>
+					<DropMenu
+						title='portfolio'
+						listItems={[
+							{ _id: 'p1', text: 'Panda&Me' },
+							{ _id: 'p2', text: 'SavingPots' },
+						]}
+					/>
+					<DropMenu
+						title='sara gray'
+						tagline='react - jamstack - development'
+						listItems={[
+							{ _id: 'b1', text: 'blog 1' },
+							{ _id: 'b2', text: 'blog 2' },
+						]}
+					/>
 				</ul>
 			</header>
 			<Centre />
