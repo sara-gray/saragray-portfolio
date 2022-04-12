@@ -14,7 +14,7 @@ export default function Home({ allPosts }) {
 	}
 
 	return (
-		<main className='bg-gray-900 w-screen h-screen overflow-hidden'>
+		<main className='bg-gray-900 w-screen h-full overflow-hidden'>
 			<Head>
 				<title>Sara Gray Portfolio Website</title>
 				<meta name='description' content='Software development portfolio' />
@@ -24,7 +24,7 @@ export default function Home({ allPosts }) {
 				<ParticleFieldEffect />
 			</div>
 
-			<header className='fixed inset-0 flex flex-row justify-between items-start w-screen h-32 p-4 text-violet-600 bg-transparent text-3xl z-20'>
+			<header className='fixed inset-0 flex flex-row justify-between items-start w-screen h-32 p-4 text-violet-600 bg-transparent text-lg z-20'>
 				<DropMenu
 					title='sara gray'
 					tagline='react - jamstack - development'
