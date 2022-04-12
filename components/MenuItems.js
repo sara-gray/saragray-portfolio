@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/router'
 
 const variants = {
 	initial: { scale: 1 },
@@ -21,7 +22,8 @@ const variants = {
 const colors = ['#FF008C', '#D309E1', '#9C1AFF', '#7700FF', '#4400FF']
 
 export const MenuItem = ({ item }) => {
-	const { _id, text } = item
+	const router = useRouter()
+	const { _id, text, slug } = item
 	return (
 		<motion.li
 			initial='open'
@@ -29,8 +31,9 @@ export const MenuItem = ({ item }) => {
 			whileHover={{ scale: 1.1 }}
 			whileTap={{ scale: 0.95 }}>
 			<div
-				className='rounded-lg m-2 px-4 border-2 flex flex-row justify-start'
-				style={{ border: `2px solid ${colors[_id]}` }}>
+				className='rounded-lg my-2 py-2 px-4 border-2 flex flex-row justify-start w-full text-lg'
+				style={{ border: `2px solid ${colors[_id]}` }}
+				onClick={() => router.push(slug)}>
 				{text}
 			</div>
 		</motion.li>

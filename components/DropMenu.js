@@ -8,17 +8,16 @@ const DropMenu = ({ title = '', tagline = '', listItems = [] }) => {
 			variants={menuVariants}
 			initial={'short'}
 			whileHover={'long'}
-			className='bg-black bg-opacity-50 p-2 rounded-lg hover:bg-opacity-100 hover:ring-2 hover:ring-blue-400 overflow-clip'>
+			className='bg-black bg-opacity-50 p-2 rounded-lg hover:bg-opacity-100 hover:ring-2 hover:ring-blue-400 overflow-clip w-72'>
 			<h1 className='capitalize text-center'>{title}</h1>
 			<p className='text-base text-opacity-50 border-b-2 border-blue-400 text-center'>
 				{tagline}
 			</p>
 
 			<motion.ul
-				className='flex flex-col mt-8 mx-2'
+				className='flex flex-col justify-start mt-8 mx-4'
 				variants={listItemVariants}>
 				{listItems.map((item, index) => (
-					// <p className=''>{item.text}</p>
 					<MenuItem index={index} item={item} key={index} />
 				))}
 			</motion.ul>

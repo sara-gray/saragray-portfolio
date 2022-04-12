@@ -2,8 +2,17 @@ import Head from 'next/head'
 import Centre from '../components/Centre'
 import DropMenu from '../components/DropMenu'
 import ParticleFieldEffect from '../components/ParticleFieldEffect'
+import { getAllPostsForHome } from '../lib/api'
 
-export default function Home() {
+export default function Home({ allPosts }) {
+	const getBlogList = (posts) => {
+		if (!posts) return []
+		let blogList = posts.map((post) => {
+			return { _id: post._id, text: post.title, slug: `/posts/${post.slug}` }
+		})
+		return blogList
+	}
+
 	return (
 		<main className='bg-gray-900 w-screen h-screen overflow-hidden'>
 			<Head>
@@ -38,14 +47,18 @@ export default function Home() {
 					<DropMenu
 						title='sara gray'
 						tagline='react - jamstack - development'
-						listItems={[
-							{ _id: 'b1', text: 'blog 1' },
-							{ _id: 'b2', text: 'blog 2' },
-						]}
+						listItems={getBlogList(allPosts)}
 					/>
 				</ul>
 			</header>
 			<Centre />
 		</main>
 	)
+}
+
+export async function getStaticProps() {
+	const allPosts = await getAllPostsForHome()
+	return {
+		props: { allPosts },
+	}
 }
