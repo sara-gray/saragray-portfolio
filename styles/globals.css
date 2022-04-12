@@ -79,6 +79,33 @@
 	transition: color 1s;
 }
 
+@media (orientation: portrait) {
+	.hover-1 {
+		color: rgb(97, 48, 139);
+		transition: color 1s;
+	}
+	.hover-2 {
+		color: rgb(56, 189, 248);
+		transition: color 1s;
+	}
+	.hover-3 {
+		color: whitesmoke;
+		transition: color 1s;
+	}
+	.hover-4 {
+		color: darkorange;
+		transition: color 1s;
+	}
+	.hover-5 {
+		color: violet;
+		transition: color 1s;
+	}
+	.hover-6 {
+		color: #635bff;
+		transition: color 1s;
+	}
+}
+
 .card::before {
 	content: '';
 	width: 104%;
