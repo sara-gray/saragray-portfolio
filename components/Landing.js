@@ -20,7 +20,7 @@ const Landing = () => {
 			<p className='absolute z-10 bottom-14 bg-logo-kharki w-32 h-8'></p>
 			<h1 className='relative z-20 mt-24 ml-12 w-[30%] h-full text-gray-500 text-2xl'>
 				Dedicated, intuitive, somewhat determined{' '}
-				<span className='text-gray-900'>expert</span>
+				<span className='text-white'>expert</span>
 			</h1>
 		</main>
 	)
