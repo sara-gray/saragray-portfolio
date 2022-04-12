@@ -10,8 +10,10 @@ const DropMenu = ({ title = '', tagline = '', listItems = [] }) => {
 			whileHover={'long'}
 			className='bg-black bg-opacity-50 p-2 rounded-lg hover:bg-opacity-100 hover:ring-2 hover:ring-blue-400 overflow-clip w-72'>
 			<h1 className='capitalize text-center'>{title}</h1>
-			<p className='text-base text-opacity-50 border-b-2 border-blue-400 text-center'>
-				{tagline}
+			<p
+				className='text-sm text-opacity-50 border-b-2 border-blue-400 text-center'
+				style={{ color: !tagline ? 'transparent' : 'inherit' }}>
+				{tagline ? tagline : 'no tagline'}
 			</p>
 
 			<motion.ul
@@ -26,9 +28,10 @@ const DropMenu = ({ title = '', tagline = '', listItems = [] }) => {
 }
 
 export default DropMenu
+
 const menuVariants = {
 	short: { height: '80px' },
-	long: { height: '400px' },
+	long: { height: '90vh' },
 }
 
 const listItemVariants = {

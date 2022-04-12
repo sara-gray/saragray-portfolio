@@ -1,12 +1,12 @@
 import Head from 'next/head'
 
-const Meta = () => {
+const Meta = ({ title = null }) => {
 	return (
 		<Head>
-			<title>Sara Gray Portfolio</title>
+			<title>{title ? title : 'sara.gray'}</title>
 			<meta
 				name='description'
-				content={`A statically generated portfolio website using Next.js and Sanity.io.`}
+				content={`sara.gray - simple well built applications from those who enjoy doing so!`}
 			/>
 		</Head>
 	)

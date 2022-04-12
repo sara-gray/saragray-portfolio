@@ -5,14 +5,14 @@
 }
 
 :root {
-	--card-height: 50vh;
-	--card-width: calc(var(--card-height) / 1.5);
+	--landscape-card-width: 50vw;
+	--landscape-card-height: calc(var(--landscape-card-width) * 0.5);
+	--portrait-card-width: 80vw;
+	--portrait-card-height: 80vh;
 }
 
 .card {
 	background: #7fd8a7;
-	width: var(--card-width);
-	height: var(--card-height);
 	padding: 3px;
 	position: relative;
 	border-radius: 6px;
@@ -23,6 +23,21 @@
 	font-size: 2em;
 	color: rgb(88 199 250 / 0%);
 	cursor: pointer;
+}
+@media (orientation: landscape) {
+	.card,
+	.card-dimensions {
+		width: var(--landscape-card-width);
+		height: var(--landscape-card-height);
+	}
+}
+
+@media (orientation: portrait) {
+	.card,
+	.card-dimensions {
+		width: var(--portrait-card-width);
+		height: var(--portrait-card-height);
+	}
 }
 
 .card:hover {
@@ -62,6 +77,33 @@
 .hover-6:hover {
 	color: #635bff;
 	transition: color 1s;
+}
+
+@media (orientation: portrait) {
+	.hover-1 {
+		color: rgb(97, 48, 139);
+		transition: color 1s;
+	}
+	.hover-2 {
+		color: rgb(56, 189, 248);
+		transition: color 1s;
+	}
+	.hover-3 {
+		color: whitesmoke;
+		transition: color 1s;
+	}
+	.hover-4 {
+		color: darkorange;
+		transition: color 1s;
+	}
+	.hover-5 {
+		color: violet;
+		transition: color 1s;
+	}
+	.hover-6 {
+		color: #635bff;
+		transition: color 1s;
+	}
 }
 
 .card::before {

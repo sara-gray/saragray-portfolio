@@ -4,7 +4,13 @@ module.exports = {
 		'./components/**/*.{js,ts,jsx,tsx}',
 	],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				'logo-pink': '#ac617c',
+				'logo-kharki': '#c69c6d',
+				'logo-plum': '#511f5a',
+			},
+		},
 	},
 	plugins: [],
 }
