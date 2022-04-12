@@ -1,8 +1,7 @@
-import Head from 'next/head'
-import Centre from '../components/Centre'
-import DropMenu from '../components/DropMenu'
-import ParticleFieldEffect from '../components/ParticleFieldEffect'
-import { getAllPostsForHome } from '../lib/api'
+import Image from 'next/image'
+
+import { getAllPostsForHome } from '@/lib/api'
+import Layout from '@/components/Layout'
 
 export default function Home({ allPosts }) {
 	const getBlogList = (posts) => {
@@ -14,45 +13,32 @@ export default function Home({ allPosts }) {
 	}
 
 	return (
-		<main className='bg-gray-900 w-screen h-full overflow-hidden'>
-			<Head>
-				<title>Sara Gray Portfolio Website</title>
-				<meta name='description' content='Software development portfolio' />
-			</Head>
-
-			<div className='w-screen h-screen'>
-				<ParticleFieldEffect />
-			</div>
-
-			<header className='fixed inset-0 flex flex-row justify-between items-start w-screen h-32 p-4 text-violet-600 bg-transparent text-lg z-20'>
-				<DropMenu
-					title='sara gray'
-					tagline='react - jamstack - development'
-					listItems={[
-						{ _id: 'm1', text: '1' },
-						{ _id: 'm2', text: '2' },
-						{ _id: 'm3', text: '3' },
-						{ _id: 'm4', text: '4' },
-						{ _id: 'm5', text: '5' },
-					]}
-				/>
-				<ul className='flex flex-row gap-4 lg:gap-24 px-12'>
-					<DropMenu
-						title='portfolio'
-						listItems={[
-							{ _id: 'p1', text: 'Panda&Me' },
-							{ _id: 'p2', text: 'SavingPots' },
-						]}
-					/>
-					<DropMenu
-						title='sara gray'
-						tagline='react - jamstack - development'
-						listItems={getBlogList(allPosts)}
-					/>
-				</ul>
-			</header>
-			<Centre />
-		</main>
+		<Layout>
+			<main className='absolute inset-0 bg-gray-900 w-screen h-[80%]'>
+				<h3 className='relative mt-12 ml-12 text-white text-4xl'>sara.gray</h3>
+				<div className='absolute top-0 right-0 w-[60%] h-full'>
+					<div className='relative w-full h-full'>
+						<Image
+							src='/assets/logo.png'
+							alt='sara gray logo'
+							layout='fill'
+							objectFit='cover'
+						/>
+					</div>
+				</div>
+				<div className='absolute bottom-[20%] right-[1%] text-white uppercase text-xs transform rotate-90'>
+					simply built and enjoyed
+				</div>
+				<p className='absolute z-10 bottom-14 bg-logo-kharki w-32 h-8'></p>
+				<h1 className='relative z-20 mt-24 ml-12 w-[30%] h-full text-gray-500 text-2xl'>
+					Dedicated, intuitive, somewhat determined{' '}
+					<spa className='text-gray-900'>expert</spa>
+				</h1>
+			</main>
+			<section>
+				<h3 className='text-black text-4xl'>sara.gray</h3>
+			</section>
+		</Layout>
 	)
 }
 
