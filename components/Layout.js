@@ -5,7 +5,7 @@ const Layout = ({ title, children }) => {
 	return (
 		<>
 			<Meta title={title} />
-			<div className='min-h-screen'>
+			<div>
 				<main>{children}</main>
 			</div>
 			<Footer />

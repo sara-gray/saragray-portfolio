@@ -14,9 +14,6 @@ export default function Home({ allPosts }) {
 	return (
 		<Layout>
 			<Landing />
-			<section>
-				<h3 className='text-black text-4xl'>sara.gray</h3>
-			</section>
 		</Layout>
 	)
 }

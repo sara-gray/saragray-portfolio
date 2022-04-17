@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const Header = ({ image, title }) => {
-	console.log(image)
 	return (
 		<main className='absolute inset-0 w-screen h-1/2'>
 			<div className='relative w-full h-full bg-white shadow-lg'>

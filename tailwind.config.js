@@ -6,9 +6,10 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				'logo-pink': '#ac617c',
-				'logo-kharki': '#c69c6d',
-				'logo-plum': '#511f5a',
+				'primary-pink': '#ac617c',
+				'primary-kharki': '#c69c6d',
+				'primary-plum': '#511f5a',
+				footer: '#222',
 			},
 		},
 	},
