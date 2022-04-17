@@ -1,6 +1,7 @@
 import { getAllPostsForHome } from '@/lib/api'
 import Layout from '@/components/Layout'
 import Landing from '@/components/Landing'
+import Hero from '@/components/Hero'
 
 export default function Home({ allPosts }) {
 	const getBlogList = (posts) => {
@@ -14,6 +15,7 @@ export default function Home({ allPosts }) {
 	return (
 		<Layout>
 			<Landing />
+			<Hero />
 		</Layout>
 	)
 }

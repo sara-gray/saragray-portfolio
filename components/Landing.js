@@ -23,7 +23,7 @@ const Landing = () => {
 				<div className='absolute bottom-[5%] right-[10%] md:right-[5%] text-white uppercase text-xs transform origin-bottom-right rotate-90 z-30'>
 					simply built and enjoyed
 				</div>
-				<p className='absolute bottom-[20%] left-0 bg-primary-plum w-[18%] h-7 block z-`0'></p>
+				<p className='absolute bottom-[20%] left-0 bg-primary-plum w-[20%] h-7 block z-`0'></p>
 			</section>
 			<h3 className='absolute bottom-[65%] md:bottom-[5%] left-[10%] text-black font-semibold text-2xl md:text-4xl'>
 				saragray.dev
