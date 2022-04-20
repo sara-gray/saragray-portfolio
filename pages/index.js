@@ -14,8 +14,10 @@ export default function Home({ allPosts }) {
 
 	return (
 		<Layout>
-			<Landing />
-			<Hero />
+			<main className='absolute inset-0 bg-white w-screen'>
+				<Landing />
+				<Hero />
+			</main>
 		</Layout>
 	)
 }
