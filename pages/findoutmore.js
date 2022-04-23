@@ -1,8 +1,10 @@
 import Footer from '@/components/Footer'
 import Layout from '@/components/Layout'
 import Skills from '@/components/Skills'
+import { getSkills } from '@/lib/api'
 
-const findoutmore = () => {
+const findoutmore = ({ skills }) => {
+	console.log(skills)
 	return (
 		<main className='bg-stone-900 w-screen h-screen'>
 			<Layout title={'About our work'}>
@@ -14,3 +16,12 @@ const findoutmore = () => {
 }
 
 export default findoutmore
+
+export async function getStaticProps() {
+	const skills = await getSkills()
+	return {
+		props: {
+			skills: skills ? skills : null,
+		},
+	}
+}
