@@ -17,7 +17,7 @@ const Header = ({ image, title }) => {
 			<h1 className='absolute bottom-[5%] left-[30%] text-5xl text-black bg-white/80 rounded-xl p-4'>
 				{title}
 			</h1>
-			<Link href='/'>
+			<Link href='/' passHref>
 				<button className='absolute right-8 top-1 ring-2 px-2 rounded hover:bg-slate-200'>
 					Home
 				</button>

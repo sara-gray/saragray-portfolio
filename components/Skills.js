@@ -35,7 +35,7 @@ const Skills = ({ skills }) => {
 			<h1 className='text-5xl'>Skills</h1>
 			<section className='flex flex-row justify-start items-center gap-4 mt-12'>
 				{skills.map((skill) => {
-					return <Skill skill={skill} />
+					return <Skill key={skill._id} skill={skill} />
 				})}
 			</section>
 		</main>
