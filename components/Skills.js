@@ -8,7 +8,7 @@ const Skill = ({ skill }) => {
 		<div
 			key={_id}
 			className='w-[6rem] h-32 flex flex-col justify-center items-center'>
-			{name}
+			<p>{name}</p>
 			{image && (
 				<Image
 					src={urlFor(image).size(60).url()}
@@ -17,12 +17,14 @@ const Skill = ({ skill }) => {
 					height={60}
 				/>
 			)}
-			<div
-				className='mt-4 px-2 border-b-4 border-primary-pink'
-				style={{ width: `${confidence}rem` }}></div>
-			<div
-				className='mt-4 px-2 border-b-4 border-primary-pink'
-				style={{ width: `${confidence}rem` }}></div>
+			<div className='mt-4 border-b-4 border-stone-800 flex flex-row'>
+				<div
+					className='border-b-4 border-primary-pink'
+					style={{ width: `${confidence}rem` }}></div>
+				<div
+					className='border-b-4 border-stone-700'
+					style={{ width: `${5 - confidence}rem` }}></div>
+			</div>
 		</div>
 	)
 }
