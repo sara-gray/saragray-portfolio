@@ -4,11 +4,10 @@ import Skills from '@/components/Skills'
 import { getSkills } from '@/lib/api'
 
 const findoutmore = ({ skills }) => {
-	console.log(skills)
 	return (
 		<main className='bg-stone-900 w-screen h-screen'>
 			<Layout title={'About our work'}>
-				<Skills />
+				<Skills skills={skills} />
 				<Footer />
 			</Layout>
 		</main>
