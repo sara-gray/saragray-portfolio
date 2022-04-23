@@ -2,6 +2,8 @@ import { getAllPostsForHome } from '@/lib/api'
 import Layout from '@/components/Layout'
 import Landing from '@/components/Landing'
 import Hero from '@/components/Hero'
+import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
 
 export default function Home({ allPosts }) {
 	const getBlogList = (posts) => {
@@ -17,6 +19,8 @@ export default function Home({ allPosts }) {
 			<main className='absolute inset-0 bg-white w-screen'>
 				<Landing />
 				<Hero />
+				<Contact />
+				<Footer />
 			</main>
 		</Layout>
 	)

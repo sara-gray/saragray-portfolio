@@ -8,10 +8,10 @@ const Landing = () => {
 					<h3 className='mx-6 md:mx-12 lg:mx-24 pt-12 text-white font-semibold text-2xl md:text-4xl'>
 						saragray.dev
 					</h3>
-					<h1 className='mx-6 md:mx-12 lg:mx-24 py-12 md:pt-36 lg:pt-52 w-[25%] text-gray-500 text-2xl'>
+					<h1 className='mx-6 md:mx-12 lg:mx-24 py-12 md:pt-30 lg:pt-40 xl:pt-56 w-[25%] text-gray-500 text-2xl'>
 						Dedicated, intuitive, <span className='text-white'>expert</span>
 					</h1>
-					<p className='relative bottom-[15%] z-10 bg-primary-plum/50 w-[50%] h-7 block'></p>
+					<p className='relative bottom-[15%] lg:bottom-[18%] z-10 bg-primary-plum/50 w-[50%] h-7 block'></p>
 				</div>
 				<div className='relative w-full flex-1'>
 					<Image

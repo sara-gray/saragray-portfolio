@@ -4,20 +4,20 @@ const Hero = () => {
 	return (
 		<main className=''>
 			<section className='mx-6 md:mx-12 lg:mx-24 py-8 text-primary-plum'>
-				<p>trustworthy reliable code</p>
+				<p className='text-2xl'>trustworthy reliable code</p>
 			</section>
-			<section className='relative w-screen h-56'>
+			<section className='relative w-screen h-56 lg:h-[80vh]'>
 				<div className='relative w-full h-full'>
 					<Image
 						src='/assets/laptop.jpg'
-						alt=''
+						alt='a programmer at work'
 						layout='fill'
 						objectFit='cover'
 					/>
 				</div>
 				<div className='absolute inset-0 w-screen h-full bg-black/60'></div>
 			</section>
-			<h3 className='mx-6 md:mx-12 lg:mx-24 py-8 text-stone-800'>
+			<h3 className='mx-6 md:mx-12 lg:mx-24 py-8 text-stone-800 text-2xl'>
 				simply built and enjoyed
 			</h3>
 		</main>
