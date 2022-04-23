@@ -5,10 +5,7 @@ const Layout = ({ title, children }) => {
 	return (
 		<>
 			<Meta title={title} />
-			<div>
-				<main>{children}</main>
-			</div>
-			<Footer />
+			<main>{children}</main>
 		</>
 	)
 }
