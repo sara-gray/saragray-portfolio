@@ -7,7 +7,7 @@ const Example = ({ example }) => {
 
 	return (
 		<div
-			className='relative hover:animate-pulse'
+			className='relative hover:animate-pulse hover:cursor-pointer'
 			data-tip={`Click to view ${name}`}
 			data-background-color='#511f5a'
 			data-delay-show={500}
@@ -55,7 +55,6 @@ const ExampleGallery = ({ examples }) => {
 }
 
 const Exemplar = ({ examples }) => {
-	console.log(examples)
 	return (
 		<main className='text-stone-500 py-4 lg:py-24 px-8 lg:px-36 w-screen'>
 			<h1 className='text-5xl'>Examples of our work</h1>
