@@ -30,11 +30,10 @@ const Skill = ({ skill }) => {
 }
 
 const Skills = ({ skills }) => {
-	console.log(skills)
 	return (
-		<main className='text-stone-500 py-24 px-36 w-screen'>
+		<main className='text-stone-500 py-4 lg:py-24 px-8 lg:px-36 w-screen'>
 			<h1 className='text-5xl'>Skills</h1>
-			<section className='flex flex-row justify-start items-center gap-4 mt-12'>
+			<section className='flex flex-wrap justify-start items-center gap-4 mt-12'>
 				{skills.map((skill) => {
 					return <Skill key={skill._id} skill={skill} />
 				})}
