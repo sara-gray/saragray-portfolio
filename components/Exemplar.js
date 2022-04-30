@@ -1,5 +1,4 @@
 import { urlFor } from '@/lib/sanity'
-import Image from 'next/image'
 
 const Example = ({ example }) => {
 	if (!example) return <></>
@@ -26,18 +25,18 @@ const ExampleGallery = ({ examples }) => {
 		<section className='h-full'>
 			<div className='px-5 py-2 mx-auto lg:pt-24 lg:px-32'>
 				<div className='flex flex-wrap -m-1 md:-m-2'>
-					<div className='flex flex-wrap w-1/2'>
-						<div className='w-1/2 p-1 md:p-2'>
-							<Example example={examples[0] ? examples[0] : null} />
-						</div>
+					<div className='flex flex-wrap w-full lg:w-1/2'>
 						<div className='w-1/2 p-1 md:p-2'>
 							<Example example={examples[1] ? examples[1] : null} />
 						</div>
-						<div className='w-full p-1 md:p-2'>
+						<div className='w-1/2 p-1 md:p-2'>
 							<Example example={examples[2] ? examples[2] : null} />
 						</div>
+						<div className='w-full p-1 md:p-2'>
+							<Example example={examples[0] ? examples[0] : null} />
+						</div>
 					</div>
-					<div className='flex flex-wrap w-1/2'>
+					<div className='flex flex-wrap w-full lg:w-1/2'>
 						<div className='w-full p-1 md:p-2'>
 							<Example example={examples[3] ? examples[3] : null} />
 						</div>
