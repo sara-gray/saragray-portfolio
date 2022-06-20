@@ -6,6 +6,7 @@ const Layout = ({ title, children }) => {
 		<>
 			<Meta title={title} />
 			<main>{children}</main>
+			<Footer />
 		</>
 	)
 }

@@ -7,6 +7,12 @@ import ErrorPage from '@/components/ErrorPage'
 import Layout from '@/components/Layout'
 import Header from '@/components/Header'
 
+/**
+ * * Post React Componant
+ * * Dispays a post
+ * @param {post}  - the selected post to display
+ * @returns - componant
+ */
 const Post = ({ post }) => {
 	const router = useRouter()
 	if (!router.isFallback && !post?.slug) {

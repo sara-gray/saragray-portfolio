@@ -6,6 +6,7 @@ import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
 export default function Home({ allPosts }) {
+
 	const getBlogList = (posts) => {
 		if (!posts) return []
 		let blogList = posts.map((post) => {
@@ -16,7 +17,7 @@ export default function Home({ allPosts }) {
 
 	return (
 		<Layout>
-			<main className='absolute inset-0 bg-white w-screen'>
+			<main className='absolute inset-0 bg-white w-screen overflow-y-auto overflow-x-hidden'>
 				<Landing />
 				<Hero />
 				<Contact />
