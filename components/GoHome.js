@@ -3,7 +3,7 @@ import Link from 'next/link'
 const GoHome = () => {
 	return (
 		<Link href='/' passHref>
-			<div className='text-primary-pink fixed top-4 lg:top-8  right-4 lg:right-8 cursor-pointer hover:scale-110 hover:text-primary-kharki'>
+			<div className='text-primary-pink fixed z-50 top-4 lg:top-8  right-4 lg:right-8 cursor-pointer hover:scale-110 hover:text-primary-kharki'>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
 					className='h-6 w-6 lg:h-8 lg:w-8'

@@ -6,7 +6,7 @@ const Contact = ({ blogList = [] }) => {
 
 	return (
 		<main className='grid grid-cols-1 md:grid-cols-3 bg-stone-900 w-screen text-center py-12 md:py-44'>
-			<div>
+			<div className='mb-12'>
 				<p className='text-sm text-stone-400 pb-16'>Get in touch</p>
 				<a
 					href='mailto:hello@saragray.dev?subject=Website Contact'
@@ -16,7 +16,7 @@ const Contact = ({ blogList = [] }) => {
 			</div>
 
 			<Link href='/findoutmore' passHref>
-				<div>
+				<div className='mb-12'>
 					<p className='text-sm text-stone-400 pb-16 cursor-pointer hover:text-primary-kharki'>
 						Find out more
 					</p>
@@ -26,7 +26,7 @@ const Contact = ({ blogList = [] }) => {
 				</div>
 			</Link>
 
-			{blogList.length > 0 && <sections>
+			{blogList.length > 0 && <sections className='mb-12'>
 				<Link href='/readmore' passHref>
 					<p className='text-sm text-stone-400 pb-8 cursor-pointer hover:text-primary-kharki'>
 						Blog
