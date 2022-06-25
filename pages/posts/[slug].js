@@ -26,22 +26,27 @@ const Post = ({ post }) => {
 		? urlFor(mainImage).width(1240).height(540).url()
 		: null
 
-	// `components` object you'll pass to PortableText
 	const components = {
+		marks: {
+			em: ({ children }) => <em className="text-primary-plum font-semibold">{children}</em>,
+			link: ({ value, children }) => {
+				const target = (value?.href || '').startsWith('http') ? '_blank' : undefined
+				return (
+					<a href={value?.href} target={target} rel={target === '_blank' && 'noindex nofollow'} className="text-primary-plum font-bold hover:text-primary-kharki">
+						{children}
+					</a>
+				)
+			},
+		},
 		block: {
-			h1: ({ children }) => <h1 className="text-2xl lg:text-4xl font-semibold mb-4">{children}</h1>,
-			h4: ({ children }) => <h1 className="text-xl lg:text-2xl font-semibold">{children}</h1>,
-			blockquote: ({ children }) => <blockquote className="border-l-primary-plum">{children}</blockquote>,
-
-			customHeading: ({ children }) => <h2 className="text-lg text-primary text-purple-700">{children}</h2>,
+			h1: ({ children }) => <h1 className="text-2xl lg:text-4xl font-semibold mt-12 mb-4">{children}</h1>,
+			h3: ({ children }) => <h3 className="text-xl lg:text-2xl font-semibold mt-8 mb-4">{children}</h3>,
+			p: ({ children }) => <p className="text-lg lg:textxl leading-loose my-4">{children}</p>,
+			blockquote: ({ children }) => <blockquote className="border-l-primary-plum border-transparent border-4 rounded italic px-4 m-4">{children}</blockquote>,
 		},
 		list: {
-			// Ex. 1: customizing common list types
 			bullet: ({ children }) => <ul className="mt-xl">{children}</ul>,
 			number: ({ children }) => <ol className="mt-lg">{children}</ol>,
-
-			// Ex. 2: rendering custom lists
-			checkmarks: ({ children }) => <ol className="m-auto text-lg">{children}</ol>,
 		},
 	}
 
@@ -51,11 +56,12 @@ const Post = ({ post }) => {
 			<aside className='absolute top-1/2'>
 
 				<section className='relative my-12 w-5/6 lg:w-2/3 mx-auto text-black'>
-
-					<PortableText
-						value={body}
-						components={components}
-					/>
+					<div>
+						<PortableText
+							value={body}
+							components={components}
+						/>
+					</div>
 
 				</section>
 			</aside>
