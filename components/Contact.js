@@ -26,14 +26,14 @@ const Contact = ({ blogList = [] }) => {
 				</div>
 			</Link>
 
-			{blogList.length > 0 && <section className='ring-2'>
+			{blogList.length > 0 && <sections>
 				<Link href='/readmore' passHref>
 					<p className='text-sm text-stone-400 pb-8 cursor-pointer hover:text-primary-kharki'>
 						Blog
 					</p>
 				</Link>
 				<BlogSelect posts={[{ _id: 'allposts', title: 'All' }, ...blogList]} />
-			</section>}
+			</sections>}
 		</main>
 	)
 }
