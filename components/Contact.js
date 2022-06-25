@@ -1,8 +1,11 @@
-import Link from 'next/link'
 
-const Contact = () => {
+import Link from 'next/link'
+import BlogSelect from './BlogSelect'
+
+const Contact = ({ blogList = [] }) => {
+
 	return (
-		<main className='grid grid-cols-1 md:grid-cols-3 bg-stone-900 w-screen h-full md:h-[80vh] text-center pt-12 md:pt-44'>
+		<main className='grid grid-cols-1 md:grid-cols-3 bg-stone-900 w-screen text-center py-12 md:py-44'>
 			<div>
 				<p className='text-sm text-stone-400 pb-16'>Get in touch</p>
 				<a
@@ -11,6 +14,7 @@ const Contact = () => {
 					hello@saragray.dev
 				</a>
 			</div>
+
 			<Link href='/findoutmore' passHref>
 				<div>
 					<p className='text-sm text-stone-400 pb-16 cursor-pointer hover:text-primary-kharki'>
@@ -21,13 +25,20 @@ const Contact = () => {
 					</p>
 				</div>
 			</Link>
-			<Link href='/readmore' passHref>
-				<p className='text-sm text-stone-400 pb-8 cursor-pointer hover:text-primary-kharki'>
-					Blog
-				</p>
-			</Link>
+
+			{blogList.length > 0 && <section className='ring-2'>
+				<Link href='/readmore' passHref>
+					<p className='text-sm text-stone-400 pb-8 cursor-pointer hover:text-primary-kharki'>
+						Blog
+					</p>
+				</Link>
+				<BlogSelect posts={[{ _id: 'allposts', title: 'All' }, ...blogList]} />
+			</section>}
 		</main>
 	)
 }
 
 export default Contact
+
+
+
