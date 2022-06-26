@@ -2,7 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
 
+@counter-style chain {
+  system: cyclic;
+  symbols: "◉";
+  suffix: " ";
+}
+
+@layer utilities {
+  .square {
+  aspect-ratio: 1/1
+  }
+}
 
 
 /* Scrollbar styles */

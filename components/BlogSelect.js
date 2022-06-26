@@ -7,8 +7,7 @@ const BlogSelect = ({ posts }) => {
 
   const selectPost = () => {
     const post = posts.filter((search) => search.title === currentPost)[0]
-    if (!post.slug) router.push('/readmore')
-    router.push(`/posts/${post.slug}`)
+    if (!post.slug) { router.push('/readmore') } else { router.push(`/posts/${post.slug}`) }
   }
 
   return (
