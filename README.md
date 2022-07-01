@@ -1,6 +1,6 @@
 # sargray.dev portfolio website
 
-Builty using:
+Built using:
 
 - Next.js
 - React
