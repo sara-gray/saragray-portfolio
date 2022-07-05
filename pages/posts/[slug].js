@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-import { getAllPostsWithSlug, getNextPost, getPost } from '@/lib/api'
+import { gePreviousAndNextPost, getAllPostsWithSlug, getPost } from '@/lib/api'
 import { urlFor } from '@/lib/sanity'
 import { PortableText } from '@portabletext/react'
 
@@ -16,8 +16,7 @@ import FlashButton from '@/components/FlashButton'
  * @param {post}  - the selected post to display
  * @returns - componant
  */
-const Post = ({ post, nextPost }) => {
-	console.log(nextPost)
+const Post = ({ post, previousPost, nextPost }) => {
 	const router = useRouter()
 	if (!router.isFallback && !post?.slug) return <ErrorPage statusCode={404} />
 	if (!post) return <ErrorPage statusCode={500} />
@@ -57,9 +56,9 @@ const Post = ({ post, nextPost }) => {
 			<div className='absolute inset-0 w-full h-full overflow-x-hidden'>
 				<Header image={image} title={title} />
 				<nav className=' w-5/6 lg:w-1/2 mx-auto flex justify-between m-4'>
-					<FlashButton buttonText='Previous' goTo='/readmore' />
+					<FlashButton buttonText='Previous' goTo={previousPost ? `/posts/${previousPost}` : null} />
 					<FlashButton buttonText='All' goTo='/readmore' />
-					<FlashButton buttonText='Next' goTo='/readmore' />
+					<FlashButton buttonText='Next' goTo={nextPost ? `/posts/${nextPost}` : null} />
 				</nav>
 				<aside className='my-24 w-5/6 lg:w-1/2 mx-auto text-black'>
 					<PortableText
@@ -77,11 +76,12 @@ export default Post
 
 export async function getStaticProps({ params }) {
 	const post = await getPost(params.slug)
-	const nextPost = await getNextPost(params.slug)
+	const data = await gePreviousAndNextPost(params.slug)
 	return {
 		props: {
 			post: post ? post[0] : null,
-			nextPost: nextPost ? nextPost[0] : null,
+			previousPost: data.previousPost ? data.previousPost : null,
+			nextPost: data.nextPost ? data.nextPost : null,
 		},
 	}
 }

@@ -4,7 +4,7 @@ import Landing from '@/components/Landing'
 import Hero from '@/components/Hero'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
-import { getAllPostTitles } from '@/lib/api'
+import { getAllPosts } from '@/lib/api'
 
 export default function Home({ posts }) {
 
@@ -22,7 +22,7 @@ export default function Home({ posts }) {
 
 
 export async function getStaticProps() {
-	const posts = await getAllPostTitles()
+	const posts = await getAllPosts()
 	return {
 		props: { posts },
 	}

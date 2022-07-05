@@ -1,12 +1,13 @@
-import Link from "next/link"
+import { useRouter } from 'next/router'
 
+const FlashButton = ({ buttonText, goTo = null }) => {
+  const router = useRouter()
 
-const FlashButton = ({ buttonText, goTo = '/' }) => {
   return (
-    <Link href={`${goTo}`} replace>
-      <button className='w-24 rounded py-1 px-2 cursor-pointer text-primary-plum hover:text-stone-400 hover:bg-primary-plum'
-        onClick={() => { console.log(goTo) }}>{buttonText}</button>
-    </Link>
+    <button key={router.asPath} className='w-24 rounded py-1 px-2 cursor-pointer text-primary-plum hover:text-stone-400 hover:bg-primary-plum'
+      style={{ visibility: !goTo ? 'hidden' : 'inline-block' }}
+      onClick={() => router.replace(goTo)}
+    >{buttonText}</button>
   )
 }
 
