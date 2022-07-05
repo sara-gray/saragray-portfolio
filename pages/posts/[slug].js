@@ -52,6 +52,11 @@ const Post = ({ post }) => {
 	return (
 		<div className='absolute inset-0 w-full h-full overflow-x-hidden'>
 			<Header image={image} title={title} />
+			{/* <nav className='flex justify-between m-4'>
+				<button>Previous Post</button>
+				<button>All Posts</button>
+				<button>Next Post</button>
+			</nav> */}
 			<aside className='my-24 w-5/6 lg:w-1/2 mx-auto text-black'>
 				<PortableText
 					value={body}
