@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-import { getAllPostsWithSlug, getPost } from '@/lib/api'
+import { getAllPostsWithSlug, getNextPost, getPost } from '@/lib/api'
 import { urlFor } from '@/lib/sanity'
 import { PortableText } from '@portabletext/react'
 
@@ -8,6 +8,7 @@ import ErrorPage from '@/components/ErrorPage'
 import Layout from '@/components/Layout'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import FlashButton from '@/components/FlashButton'
 
 /**
  * * Post React Componant
@@ -15,7 +16,8 @@ import Footer from '@/components/Footer'
  * @param {post}  - the selected post to display
  * @returns - componant
  */
-const Post = ({ post }) => {
+const Post = ({ post, nextPost }) => {
+	console.log(nextPost)
 	const router = useRouter()
 	if (!router.isFallback && !post?.slug) return <ErrorPage statusCode={404} />
 	if (!post) return <ErrorPage statusCode={500} />
@@ -50,21 +52,24 @@ const Post = ({ post }) => {
 	}
 
 	return (
-		<div className='absolute inset-0 w-full h-full overflow-x-hidden'>
-			<Header image={image} title={title} />
-			{/* <nav className='flex justify-between m-4'>
-				<button>Previous Post</button>
-				<button>All Posts</button>
-				<button>Next Post</button>
-			</nav> */}
-			<aside className='my-24 w-5/6 lg:w-1/2 mx-auto text-black'>
-				<PortableText
-					value={body}
-					components={components}
-				/>
-			</aside >
-			<Footer />
-		</div >
+		<Layout title={title}>
+
+			<div className='absolute inset-0 w-full h-full overflow-x-hidden'>
+				<Header image={image} title={title} />
+				<nav className=' w-5/6 lg:w-1/2 mx-auto flex justify-between m-4'>
+					<FlashButton buttonText='Previous' goTo='/readmore' />
+					<FlashButton buttonText='All' goTo='/readmore' />
+					<FlashButton buttonText='Next' goTo='/readmore' />
+				</nav>
+				<aside className='my-24 w-5/6 lg:w-1/2 mx-auto text-black'>
+					<PortableText
+						value={body}
+						components={components}
+					/>
+				</aside >
+				<Footer />
+			</div >
+		</Layout>
 	)
 }
 
@@ -72,9 +77,11 @@ export default Post
 
 export async function getStaticProps({ params }) {
 	const post = await getPost(params.slug)
+	const nextPost = await getNextPost(params.slug)
 	return {
 		props: {
 			post: post ? post[0] : null,
+			nextPost: nextPost ? nextPost[0] : null,
 		},
 	}
 }
