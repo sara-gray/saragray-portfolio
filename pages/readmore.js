@@ -1,3 +1,4 @@
+import { BlogSnippet } from '@/components/BlogSnippet'
 import GoHome from '@/components/GoHome'
 import Layout from '@/components/Layout'
 import { getAllPostTitles } from '@/lib/api'
@@ -10,19 +11,15 @@ const readmore = ({ posts }) => {
 				<main className='grid place-items-center min-h-screen'>
 
 					<div className="p-4 max-w-5xl grid gap-4 xs:grid-cols-2 xs:p-8 md:grid-cols-4">
+
 						<h1 className='text-4xl font-semibold text-stone-100 xs:grid xs:gap-4 xs:col-span-2 md:col-span-3 md:text-5xl md:grid-cols-3'>Posts</h1>
 						<p className='text-stone-300 xs:row-start-2 xs:col-start-2 xs:self-center md:col-start-1 md:col-span-2 md:pr-12 md:text-lg'><span className='md:col-span-2'>
 							Here some ideas and hopefully usful posts. More will appear over time as I tend to blog about the recent things I have been learning about.
 						</span>
 						</p>
-						<div className="h-16 hover:scale-105 transition duration-200 bg-blue-500 rounded-lg xs:h-auto xs:square flex justify-center items-center text-white text-2xl">{posts[0].title}</div>
-						<div className="h-16 hover:scale-105 transition duration-200 bg-pink-500 rounded-lg xs:h-auto xs:square"></div>
-						<div className="h-16 hover:scale-105 transition duration-200 bg-blue-500 rounded-lg xs:h-auto xs:square"></div>
-						<div className="h-16 hover:scale-105 transition duration-200 md:col-start-2 bg-pink-500 rounded-lg xs:h-auto xs:square"></div>
-						<div className="h-16 hover:scale-105 transition duration-200 bg-blue-500 rounded-lg xs:h-auto xs:square"></div>
-						<div className="h-16 hover:scale-105 transition duration-200 bg-pink-500 rounded-lg xs:h-auto xs:square"></div>
-						<div className="h-16 hover:scale-105 transition duration-200 bg-blue-500 rounded-lg xs:h-auto xs:square"></div>
-						<div className="h-16 hover:scale-105 transition duration-200 bg-pink-500 rounded-lg xs:h-auto xs:square"></div>
+						{posts.map((post) => <BlogSnippet key={post._id} post={post} />)
+
+						}
 						<p className='text-stone-300 self-center  md:text-lg md:col-span-2 px-4'>... more to follow.</p>
 					</div>
 				</main>
@@ -41,3 +38,4 @@ export async function getStaticProps() {
 		props: { posts },
 	}
 }
+
