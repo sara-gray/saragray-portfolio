@@ -6,6 +6,7 @@ import Image from 'next/image'
 export const BlogSnippet = ({ post }) => {
 
   const { slug, title, mainImage } = post
+
   const image = mainImage
     ? urlFor(mainImage).width(600).height(600).url()
     : null

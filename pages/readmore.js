@@ -17,9 +17,9 @@ const readmore = ({ posts }) => {
 							Here are some of my thoughts which are hopefully useful for you also. More will appear over time, as I tend to blog about the recent things I have been learning about.
 						</span>
 						</p>
-						{posts.map((post) => <BlogSnippet key={post._id} post={post} />)
 
-						}
+						{posts.map((post) => <BlogSnippet key={post._id} post={post} />)}
+
 						<p className='text-stone-300 self-center  md:text-lg md:col-span-2 px-4'>... more to follow.</p>
 
 					</div>
